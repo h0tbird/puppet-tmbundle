@@ -194,7 +194,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(false|true|running|present|absent|file|directory|undef)\b</string>
+					<string>(?i)\b(false|true|running|stopped|present|latest|absent|file|directory|undef)\b</string>
 					<key>name</key>
 					<string>constant.language.puppet</string>
 				</dict>
