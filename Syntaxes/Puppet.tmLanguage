@@ -50,6 +50,10 @@
 			<key>include</key>
 			<string>#puppet.resource</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#puppet.reference</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -224,7 +228,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?&lt;=\s)\{</string>
+			<string>(?&lt;=\s){</string>
 			<key>name</key>
 			<string>meta.define.puppet</string>
 			<key>patterns</key>
@@ -248,13 +252,36 @@
 		</dict>
 		<key>puppet.functions</key>
 		<dict>
+			<key>begin</key>
+			<string>\b(alert|create_resources|crit|debug|defined|emerg|err|extlookup|fail|file|fqdn_rand|generate|include|info|inline_template|md5|notice|realize|regsubst|require|search|sha1|shellquote|split|sprintf|tag|tagged|template|versioncmp|warning)\b\s*\(</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.name.function.puppet</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string>meta.function.puppet</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\b(alert|create_resources|crit|debug|defined|emerg|err|extlookup|fail|file|fqdn_rand|generate|include|info|inline_template|md5|notice|realize|regsubst|require|search|sha1|shellquote|split|sprintf|tag|tagged|template|versioncmp|warning)\b</string>
+					<key>begin</key>
+					<string>(?&lt;=\()</string>
+					<key>end</key>
+					<string>(?=\))</string>
 					<key>name</key>
-					<string>support.function.puppet</string>
+					<string>meta.arguments.function.puppet</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -269,6 +296,11 @@
 					<string>keyword.control.puppet</string>
 				</dict>
 			</array>
+		</dict>
+		<key>puppet.reference</key>
+		<dict>
+			<key>name</key>
+			<string>reference.resource.puppet</string>
 		</dict>
 		<key>puppet.resource</key>
 		<dict>
