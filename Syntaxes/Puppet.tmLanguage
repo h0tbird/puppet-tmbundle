@@ -103,7 +103,7 @@
 		<key>puppet.class</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(class)\s+([a-zA-Z0-9_:]+)(\s*(?=\())?</string>
+			<string>^\s*(class)\s+([a-zA-Z0-9_:]+)\s*((?=\())?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -118,7 +118,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>((inherits)\s+([a-zA-Z0-9_:]+)\s+)?(?&lt;=\s){</string>
+			<string>((inherits)\s+([a-zA-Z0-9_:]+)\s*)?{</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>2</key>
@@ -147,7 +147,19 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>$self</string>
+							<string>#puppet.comments</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#puppet.variables</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#puppet.constants</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#puppet.functions</string>
 						</dict>
 					</array>
 				</dict>
