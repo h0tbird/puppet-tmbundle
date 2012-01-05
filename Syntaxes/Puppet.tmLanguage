@@ -317,7 +317,7 @@
 		<key>puppet.resource</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*([a-zA-Z0-9_:]+)\s*(?={)</string>
+			<string>\s*([a-zA-Z0-9_:]+)\s*(?={)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
