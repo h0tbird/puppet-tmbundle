@@ -57,13 +57,6 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>escaped_char</key>
-		<dict>
-			<key>match</key>
-			<string>\\.</string>
-			<key>name</key>
-			<string>constant.character.escape.puppet</string>
-		</dict>
 		<key>puppet.class</key>
 		<dict>
 			<key>begin</key>
@@ -174,6 +167,24 @@
 				</dict>
 			</array>
 		</dict>
+		<key>puppet.escaped</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>scapes.puppet</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>scaped.puppet</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\\)(.)</string>
+		</dict>
 		<key>puppet.functions</key>
 		<dict>
 			<key>begin</key>
@@ -208,14 +219,14 @@
 		<key>puppet.keywords</key>
 		<dict>
 			<key>match</key>
-			<string>\b(case|if|else|in|and)(?!::)</string>
+			<string>\b(case|if|else|in|and)\b</string>
 			<key>name</key>
 			<string>keyword.puppet</string>
 		</dict>
 		<key>puppet.reference</key>
 		<dict>
 			<key>begin</key>
-			<string>([A-Z][a-z0-9_]+)\s*\[</string>
+			<string>([A-Z][a-z0-9_]+(::[A-Z][a-z0-9_]+)?)\s*\[</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -289,7 +300,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#escaped_char</string>
+							<string>#puppet.escaped</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -308,7 +319,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#escaped_char</string>
+							<string>#puppet.escaped</string>
 						</dict>
 					</array>
 				</dict>
