@@ -216,7 +216,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b\w+\s*(?==&gt;)\s*</string>
+					<string>\b\w+\s*(?=(=&gt;|\+&gt;|-&gt;))\s*</string>
 					<key>name</key>
 					<string>constant.other.key.puppet</string>
 				</dict>
