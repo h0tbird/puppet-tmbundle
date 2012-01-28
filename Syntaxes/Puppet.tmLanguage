@@ -188,7 +188,7 @@
 		<key>puppet.functions</key>
 		<dict>
 			<key>begin</key>
-			<string>\b(alert|create_resources|crit|debug|defined|emerg|err|extlookup|fail|file|fqdn_rand|generate|include|info|inline_template|md5|notice|realize|regsubst|require|search|sha1|shellquote|split|sprintf|tag|tagged|template|versioncmp|warning)\b\s*\(</string>
+			<string>\b(alert|create_resources|crit|debug|defined|emerg|err|extlookup|fail|file|fqdn_rand|generate|include|info|inline_template|md5|notice|realize|regsubst|require|search|sha1|shellquote|split|sprintf|tag|tagged|template|versioncmp|warning|abs|bool2num|capitalize|chomp|chop|delete_at|delete|downcase|empty|flatten|getvar|grep|hash|has_key|is_array|is_domain_name|is_float|is_hash|is_integer|is_ip_address|is_mac_address|is_numeric|is_string|join|keys|loadyaml|lstrip|member|merge|num2bool|parsejson|parseyaml|prefix|range|reverse|rstrip|shuffle|size|sort|squeeze|str2bool|strftime|strip|swapcase|time|type|unique|upcase|validate_array|validate_bool|validate_hash|validate_re|validate_string|values_at|values|zip)\b\s*\(</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
