@@ -219,7 +219,7 @@
 		<key>puppet.keywords</key>
 		<dict>
 			<key>match</key>
-			<string>\b(case|if|else|in|and)\b</string>
+			<string>\b(case|if|else|elsif|in|and)\b</string>
 			<key>name</key>
 			<string>keyword.puppet</string>
 		</dict>
